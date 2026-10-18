@@ -1,0 +1,7 @@
+Metric,Configuration,Seed 42 %,Seed 1234 %,Mean %,Range %
+primary (0-shot flexible),S1,0.0431655,-0.0503597,-0.00359712,-0.0503597,0.0431655
+primary (0-shot flexible),S2,0.582734,0.589928,0.586331,0.582734,0.589928
+primary (0-shot flexible),S3,0.489209,0.52518,0.507194,0.489209,0.52518
+secondary (4-shot flexible),S1,-0.462585,-0.44898,-0.455782,-0.462585,-0.44898
+secondary (4-shot flexible),S2,-0.0748299,0.0816327,0.00340136,-0.0748299,0.0816327
+secondary (4-shot flexible),S3,-0.285714,-0.170068,-0.227891,-0.285714,-0.170068

@@ -1,0 +1,20 @@
+{
+  "name": "fewshot_4shot",
+  "source_split": "train",
+  "seed": 42,
+  "n": 4,
+  "sha256": "1810a934ee3ec3325ffe15f6e90048f3250385fef050adf412f1cb001749ec80",
+  "note": "drawn from train_rest; order is the order in the prompt",
+  "gold": [
+    "2",
+    "240",
+    "5",
+    "3700"
+  ],
+  "indices": [
+    5460,
+    957,
+    212,
+    6338
+  ]
+}

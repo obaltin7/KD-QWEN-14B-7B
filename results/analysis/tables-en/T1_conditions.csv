@@ -1,0 +1,22 @@
+Item,Value
+Teacher (T),"Qwen/Qwen2.5-14B-Instruct (frozen, bf16)"
+Student (S),Qwen/Qwen2.5-7B-Instruct + LoRA
+Training data,"GSM8K train_rest, n = 7173"
+Longest example / truncated,446 tokens / 0
+Test,"GSM8K test, n = 1319"
+Prompt,Question: {question}\nAnswer: — no chat template
+LoRA,"r = 16, alpha = 32, dropout = 0.05, targets: q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj"
+Trainable LoRA parameters,"40,370,176"
+Optimisation,"AdamW (wd = 0), lr = 0.0001, 3% linear warm-up + cosine, gradient clipping 1.0"
+Batch,effective 16 (micro 4)
+Epochs / steps,2 / 898 (warm-up 27)
+Sequence length,at most 512
+"KD (S2, S3)","τ = 2, α = 0.5, forward KL, first 151,665 vocabulary indices"
+Hidden state (S3),"β = 1, pairs 7↔12, 14↔24, 21↔36, 28↔48, W: 3584→5120 (shared)"
+Seeds,"42, 1234"
+wall_time_min/peak_mem_gb S1_seed42,22.00/17.47
+wall_time_min/peak_mem_gb S2_seed42,30.14/49.20
+wall_time_min/peak_mem_gb S3_seed42,31.89/50.21
+wall_time_min/peak_mem_gb S1_seed1234,21.68/17.43
+wall_time_min/peak_mem_gb S2_seed1234,30.54/49.10
+wall_time_min/peak_mem_gb S3_seed1234,31.52/50.10

@@ -1,0 +1,258 @@
+{
+  "engine": "vllm",
+  "scoring_version": "v2",
+  "decision_mode": "flexible",
+  "table": {
+    "teacher@0": {
+      "n": 1319,
+      "accuracy_strict": 0.0,
+      "ci95_strict": [
+        0.0,
+        0.002903945030982515
+      ],
+      "accuracy_flexible": 0.8741470811220622,
+      "ci95_flexible": [
+        0.855153736710856,
+        0.8909674204191064
+      ],
+      "format_error_rate": 1.0,
+      "no_answer_rate": 0.0,
+      "marker_truncated_rate": 0.0,
+      "truncated_rate": 0.5094768764215315,
+      "mean_gen_tokens": 358.8817285822593,
+      "n_score_errors": 0,
+      "gen_s": 134.3,
+      "tokens_per_s": 3523.9
+    },
+    "teacher@4": {
+      "n": 1319,
+      "accuracy_strict": 0.9181197877179682,
+      "ci95_strict": [
+        0.9020805852685062,
+        0.931730596407632
+      ],
+      "accuracy_flexible": 0.9279757391963609,
+      "ci95_flexible": [
+        0.9127459667868126,
+        0.9407198755634684
+      ],
+      "format_error_rate": 0.017437452615617893,
+      "no_answer_rate": 0.0,
+      "marker_truncated_rate": 0.6072782410917361,
+      "truncated_rate": 0.4177407126611069,
+      "mean_gen_tokens": 325.46929492039425,
+      "n_score_errors": 0,
+      "gen_s": 128.6,
+      "tokens_per_s": 3339.0
+    },
+    "student_base@0": {
+      "n": 1319,
+      "accuracy_strict": 0.0075815011372251705,
+      "ci95_strict": [
+        0.0041232960670720634,
+        0.013899618713251122
+      ],
+      "accuracy_flexible": 0.8074298711144806,
+      "ci95_flexible": [
+        0.7852692402282878,
+        0.8278049831074764
+      ],
+      "format_error_rate": 0.9878695981804397,
+      "no_answer_rate": 0.0,
+      "marker_truncated_rate": 0.9006823351023503,
+      "truncated_rate": 0.05458680818802123,
+      "mean_gen_tokens": 365.4184988627748,
+      "n_score_errors": 0,
+      "gen_s": 70.4,
+      "tokens_per_s": 6850.5
+    },
+    "student_base@4": {
+      "n": 1319,
+      "accuracy_strict": 0.8188021228203184,
+      "ci95_strict": [
+        0.7970989118084892,
+        0.8386537661512861
+      ],
+      "accuracy_flexible": 0.8218347232752085,
+      "ci95_flexible": [
+        0.8002585222451459,
+        0.8415417436143655
+      ],
+      "format_error_rate": 0.02350265352539803,
+      "no_answer_rate": 0.009855951478392721,
+      "marker_truncated_rate": 0.006823351023502654,
+      "truncated_rate": 0.02047005307050796,
+      "mean_gen_tokens": 130.10007581501137,
+      "n_score_errors": 0,
+      "gen_s": 33.0,
+      "tokens_per_s": 5195.5
+    },
+    "student_instruct@0": {
+      "n": 1319,
+      "accuracy_strict": 0.0,
+      "ci95_strict": [
+        0.0,
+        0.002903945030982515
+      ],
+      "accuracy_flexible": 0.7687642153146323,
+      "ci95_flexible": [
+        0.7452498160220216,
+        0.7907176615921054
+      ],
+      "format_error_rate": 1.0,
+      "no_answer_rate": 0.0,
+      "marker_truncated_rate": 0.008339651250947688,
+      "truncated_rate": 0.05989385898407885,
+      "mean_gen_tokens": 147.50871872630782,
+      "n_score_errors": 0,
+      "gen_s": 34.7,
+      "tokens_per_s": 5603.3
+    },
+    "student_instruct@4": {
+      "n": 1319,
+      "accuracy_strict": 0.8119787717968158,
+      "ci95_strict": [
+        0.789997606784488,
+        0.8321479984008806
+      ],
+      "accuracy_flexible": 0.8165276724791509,
+      "ci95_flexible": [
+        0.7947306207718788,
+        0.8364863662630945
+      ],
+      "format_error_rate": 0.06520090978013647,
+      "no_answer_rate": 0.0037907505686125853,
+      "marker_truncated_rate": 0.016679302501895376,
+      "truncated_rate": 0.06899166034874905,
+      "mean_gen_tokens": 200.17285822592874,
+      "n_score_errors": 0,
+      "gen_s": 45.3,
+      "tokens_per_s": 5828.2
+    }
+  },
+  "gaps_points": {
+    "strict": {
+      "student_base": {
+        "0": -0.7581501137225171,
+        "4": 9.931766489764982
+      },
+      "student_instruct": {
+        "0": 0.0,
+        "4": 10.614101592115244
+      }
+    },
+    "flexible": {
+      "student_base": {
+        "0": 6.671721000758158,
+        "4": 10.614101592115244
+      },
+      "student_instruct": {
+        "0": 10.538286580742984,
+        "4": 11.144806671720996
+      }
+    }
+  },
+  "mcnemar": {
+    "strict": {
+      "student_base": {
+        "0": {
+          "n_paired": 1319,
+          "only_a": 0,
+          "only_b": 10,
+          "p_value": 0.001953125
+        },
+        "4": {
+          "n_paired": 1319,
+          "only_a": 174,
+          "only_b": 43,
+          "p_value": 7.030610598231245e-20
+        }
+      },
+      "student_instruct": {
+        "0": {
+          "n_paired": 1319,
+          "only_a": 0,
+          "only_b": 0,
+          "p_value": 1.0
+        },
+        "4": {
+          "n_paired": 1319,
+          "only_a": 180,
+          "only_b": 40,
+          "p_value": 2.1179181568510924e-22
+        }
+      }
+    },
+    "flexible": {
+      "student_base": {
+        "0": {
+          "n_paired": 1319,
+          "only_a": 170,
+          "only_b": 82,
+          "p_value": 3.1030500520944944e-08
+        },
+        "4": {
+          "n_paired": 1319,
+          "only_a": 174,
+          "only_b": 34,
+          "p_value": 7.654188743618064e-24
+        }
+      },
+      "student_instruct": {
+        "0": {
+          "n_paired": 1319,
+          "only_a": 217,
+          "only_b": 78,
+          "p_value": 2.574220292716882e-16
+        },
+        "4": {
+          "n_paired": 1319,
+          "only_a": 180,
+          "only_b": 33,
+          "p_value": 1.0720836152405288e-25
+        }
+      }
+    }
+  },
+  "decision_rule": {
+    "min_gap_points": 5,
+    "comfortable_gap_points": 8,
+    "preference": [
+      "student_base",
+      "student_instruct"
+    ]
+  },
+  "statuses": {
+    "student_base": "borderline",
+    "student_instruct": "sufficient"
+  },
+  "recommendation": "student_instruct",
+  "missing": [],
+  "meta": {
+    "timestamp_utc": "2026-10-18T17:31:25+00:00",
+    "git": {
+      "branch": null,
+      "dirty": null
+    },
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.9.1+cpu",
+      "transformers": "4.56.2",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "datasets": null,
+      "vllm": null,
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.4",
+      "pandas": null,
+      "scipy": null,
+      "pyyaml": "6.0.2"
+    },
+    "gpu": {
+      "cuda_available": false
+    },
+    "script": "gap_report.py"
+  }
+}

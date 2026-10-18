@@ -1,0 +1,5 @@
+Hypothesis,Comparison,Seed,Acc. A %,Acc. B %,Difference (points),Bootstrap 95% CI,b (only A),c (only B),p (raw),p (Holm),Significant (α = 0.05),Direction,Decision
+H1,S2−S1,42,83.0174,77.3313,5.68613,3.48749,7.88476,150,75,6.4331e-07,1.92993e-06,favourable,supported
+H2,S3−S2,42,82.0318,83.0174,-0.985595,-2.65353,0.682335,57,70,0.286915,0.573829,unfavourable,not supported
+H1,S2−S1,1234,83.0933,76.3457,6.74754,4.47309,9.0978,168,79,1.51853e-08,6.0741e-08,favourable,supported
+H2,S3−S2,1234,82.4109,83.0933,-0.682335,-2.35027,1.06141,63,72,0.491262,0.573829,unfavourable,not supported

@@ -1,0 +1,1 @@
+GSM8K test (n = 1319) 0-shot flexible doğruluğu. Çubuk: tohum ortalaması; işaretler: tohum 42 (dolu) ve 1234 (boş) değerleri, hata çubukları %95 Wilson güven aralığı. Kesikli çizgi: S0 (eğitimsiz öğrenci); kesik-noktalı çizgi: T (öğretmen).

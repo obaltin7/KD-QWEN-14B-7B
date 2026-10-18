@@ -1,0 +1,22 @@
+Öğe,Değer
+Öğretmen (T),"Qwen/Qwen2.5-14B-Instruct (dondurulmuş, bf16)"
+Öğrenci (S),Qwen/Qwen2.5-7B-Instruct + LoRA
+Eğitim verisi,"GSM8K train_rest, n = 7173"
+En uzun örnek / kırpılan,446 belirteç / 0
+Test,"GSM8K test, n = 1319"
+İstem,Question: {soru}\nAnswer: — sohbet şablonu yok
+LoRA,"r = 16, alfa = 32, dropout = 0,05, hedef: q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj"
+Eğitilebilir LoRA parametresi,40.370.176
+Optimizasyon,"AdamW (wd = 0), lr = 0.0001, %3 doğrusal ısınma + kosinüs, gradyan kırpma 1,0"
+Yığın,etkin 16 (mikro 4)
+Dönem / adım,2 / 898 (ısınma 27)
+Dizi uzunluğu,en fazla 512
+"KD (S2, S3)","τ = 2, α = 0,5, ileri KL, ilk 151.665 sözlük indeksi"
+Gizli durum (S3),"β = 1, çiftler 7↔12, 14↔24, 21↔36, 28↔48, W: 3584→5120 (paylaşılan)"
+Tohumlar,"42, 1234"
+wall_time_min/peak_mem_gb S1_seed42,22.00/17.47
+wall_time_min/peak_mem_gb S2_seed42,30.14/49.20
+wall_time_min/peak_mem_gb S3_seed42,31.89/50.21
+wall_time_min/peak_mem_gb S1_seed1234,21.68/17.43
+wall_time_min/peak_mem_gb S2_seed1234,30.54/49.10
+wall_time_min/peak_mem_gb S3_seed1234,31.52/50.10

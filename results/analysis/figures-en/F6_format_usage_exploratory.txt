@@ -1,0 +1,1 @@
+Exploratory (not pre-registered): rate of using the "#### number" format in GSM8K test 0-shot generations (1 − format error). For S1–S3 the bar is the seed mean and the markers are the seed values.

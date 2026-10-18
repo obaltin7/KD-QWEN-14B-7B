@@ -1,0 +1,1 @@
+Öğrenme–unutma düzlemi. x: MMLU (acc), HellaSwag (acc_norm) ve ARC-C (acc_norm) doğruluklarındaki S0'a göre düşüşün ortalaması (puan; pozitif = düşüş). y: GSM8K test 0-shot flexible doğruluğunda S0'a göre kazanç (puan). Küçük işaretler tek koşular (iki tohum), büyük işaretler yapılandırma ortalamaları; yıldız S0 (0, 0).

@@ -1,0 +1,141 @@
+# Single configuration file. Relative paths are resolved against the repo root.
+
+paths:
+  workspace: ${WORKSPACE:-/workspace}   # override with the WORKSPACE environment variable
+  repo: ${WORKSPACE:-/workspace}/KD-QWEN-14B-7B
+  hf_home: ${WORKSPACE:-/workspace}/hf_cache        # the HF_HOME environment variable takes precedence if set
+  venv: ${WORKSPACE:-/workspace}/venv
+  splits_dir: data/splits
+  results_dir: results
+  checkpoints_dir: ${WORKSPACE:-/workspace}/checkpoints   # outside the repo, not committed
+
+models:
+  teacher: Qwen/Qwen2.5-14B-Instruct        # frozen, bf16
+  student_base: Qwen/Qwen2.5-7B             # student to be trained with LoRA
+  student_instruct: Qwen/Qwen2.5-7B-Instruct
+  dtype: bfloat16
+
+# Decision (end of baseline stage, docs/decisions.md): student to be trained with LoRA.
+# Min T − S0 gap under the pre-specified rule: Instruct 10.5 points (sufficient), base 6.7 (borderline).
+student: student_instruct
+
+# Primary GSM8K metric (decision): 0-shot + flexible; strict and 4-shot are secondary.
+primary_metric:
+  task: gsm8k
+  shots: 0
+  scoring: flexible
+
+data:
+  dataset: openai/gsm8k
+  config: main
+  train_size: 7473
+  test_size: 1319
+
+split:
+  val_size: 300
+  seed: 42
+  fewshot_k: 4          # 4-shot exemplars are drawn from train_rest
+  fewshot_seed: 42
+
+eval:
+  decoding: greedy      # temperature=0, top_p=1
+  max_new_tokens: 512
+  shots: [0, 4]
+  split: test           # test (1319) is used for the final evaluation only
+  seed: 42
+  # Generation stops at any of these sequences (removed from the output). With the plain Q/A prompt,
+  # the answer is complete once the model starts a new "Question:".
+  stop_sequences: ["\n\nQuestion:", "\nQuestion:"]
+  # Stopping on special tokens (base eos and Instruct eos); identical in both engines.
+  stop_tokens: ["<|endoftext|>", "<|im_end|>"]
+  vllm:
+    gpu_memory_utilization: 0.85
+    max_model_len: 4096
+    enable_prefix_caching: true
+  hf:
+    batch_size: 16
+  out_dir: results/day1/eval
+
+# Student-selection decision rule (gap_report.py).
+decision:
+  min_gap_points: 5          # T − S0 gap below this is "insufficient"
+  comfortable_gap_points: 8  # above this "sufficient", in between "borderline"
+  preference: [student_base, student_instruct]   # preference order on ties
+
+# ---------------------------------------------------------------------------
+# Training (docs/preregistration.md, exactly as in prereg-v1.0). Only the loss function differs.
+# ---------------------------------------------------------------------------
+train:
+  seeds: [42, 1234]
+  runs_dir: ${WORKSPACE:-/workspace}/runs        # adapters, checkpoints (not in git)
+  results_dir: results/train       # small logs and summaries (committed)
+  # The learning rate is selected in the pilot with S1 (CE) on val and FROZEN here.
+  # While null, run_main.sh and train.py (without --lr) abort with an explicit error.
+  lr: 0.0001                       # FROZEN (pilot, 12 October 2026; docs/decisions.md)
+  epochs: 2
+  effective_batch: 16              # fixed; micro_batch x accum = 16
+  micro_batch: 4                   # adjustable for memory
+  max_seq_len: 512                 # prompt + answer + eos; longer ones are truncated and reported
+  eos_token: "<|endoftext|>"       # student eos appended to the target (baseline-stage decision)
+  warmup_ratio: 0.03               # linear warmup, then cosine
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  gradient_checkpointing: true
+  attn_implementation: sdpa
+  ckpt_every_steps: null           # always at end of epoch; optional extra frequency
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+    target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  configs:
+    S1: {ce: true, kd: false, hidden: false}
+    S2: {ce: true, kd: true,  hidden: false}   # (1-α)·CE + α·τ²·KL(p_T^τ || p_S^τ)
+    S3: {ce: true, kd: true,  hidden: true}    # S2 + β·(1/4)·Σ MSE(LN(W·h_S), LN(h_T))
+  kd:
+    tau: 2.0
+    alpha: 0.5
+    kl_direction: forward          # KL(p_T || p_S)
+    vocab_cut: 151665              # len(tokenizer); padding rows up to 152064 are excluded
+  hidden:
+    beta: 1.0
+    pairs: [[7, 12], [14, 24], [21, 36], [28, 48]]   # (student, teacher) hidden_states indices
+    student_dim: 3584
+    teacher_dim: 5120
+    projection: shared             # single W (3584->5120, fp32) shared across all pairs
+    norm: layer_norm_no_affine     # F.layer_norm, without affine parameters
+
+# ---------------------------------------------------------------------------
+# General benchmarks (forgetting axis). Log-likelihood based, zero-shot, bf16, no chat template.
+# ---------------------------------------------------------------------------
+general:
+  out_dir: results/general
+  seed: 42
+  batch_size: 16          # halved automatically on OOM
+  max_length: 4096        # choice requests are left-truncated to this length
+  datasets:
+    mmlu:
+      path: cais/mmlu
+      name: all
+      split: test
+      n: 1000             # sample stratified proportionally by subject
+    hellaswag:
+      path: Rowan/hellaswag
+      name: null
+      split: validation
+      n: 1000
+      fallback_revision: refs/convert/parquet   # if the script-based repo cannot be loaded
+    arc_c:
+      path: allenai/ai2_arc
+      name: ARC-Challenge
+      split: test
+      n: all              # 1172
+    wikitext2:
+      path: Salesforce/wikitext    # current name of the "wikitext" repo
+      name: wikitext-2-raw-v1
+      split: test
+      n: all
+  wikitext:
+    window: 2048
+    stride: 512
+    batch_size: 4         # windows are long (2048); smaller than the general batch size

@@ -1,0 +1,1 @@
+Keşif amaçlı (ön kayıt dışı): GSM8K test 0-shot üretimlerinde "#### sayı" biçimini kullanma oranı (1 − format hatası). S1–S3 için çubuk tohum ortalaması, işaretler tohum değerleri.

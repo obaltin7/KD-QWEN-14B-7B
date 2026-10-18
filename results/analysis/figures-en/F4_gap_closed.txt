@@ -1,0 +1,1 @@
+Gap-closed ratio (Sx − S0) / (T − S0), primary metric (GSM8K test 0-shot flexible). Bars: seed mean; markers: seed 42 (filled) and 1234 (open). 0% = S0 level (dashed), 100% = T level (dash-dotted).

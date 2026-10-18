@@ -1,0 +1,1 @@
+Kapanan boşluk oranı (Sx − S0) / (T − S0), birincil ölçüt (GSM8K test 0-shot flexible). Çubuk: tohum ortalaması; işaretler: tohum 42 (dolu) ve 1234 (boş). %0 = S0 düzeyi (kesikli), %100 = T düzeyi (kesik-noktalı).

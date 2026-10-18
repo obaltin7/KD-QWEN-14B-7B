@@ -1,0 +1,1 @@
+(a) Genel ölçütlerde S0'a göre doğruluk değişimi (puan; negatif = düşüş): MMLU (n = 1000, acc), HellaSwag (n = 1000, acc_norm), ARC-C (n = 1172, acc_norm). (b) WikiText-2 test perplexity değişimi (Sx − S0; pozitif = kötüleşme). Çubuk: iki tohumun ortalaması; hata çubuğu: tohum aralığı (en küçük–en büyük).

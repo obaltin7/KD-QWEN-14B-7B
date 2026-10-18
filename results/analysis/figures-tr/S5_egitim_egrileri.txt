@@ -1,0 +1,1 @@
+Eğitim eğrileri (25 adımlık hareketli ortalama; düz çizgi tohum 42, kesikli tohum 1234). (a) Cevap belirteçlerinde CE (S1, S2, S3). (b) τ² ile ölçeklenmiş ileri KL (S2, S3). (c) Ara katman öznitelik kaybı (S3; dört katman çiftinin ortalaması, katman normalize MSE).

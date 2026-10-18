@@ -1,0 +1,639 @@
+{
+  "table": {
+    "teacher": {
+      "mmlu": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.787,
+        "acc_ci95": [
+          0.7605503972534416,
+          0.81125304334133
+        ],
+        "acc_norm": 0.787,
+        "acc_norm_ci95": [
+          0.7605503972534416,
+          0.81125304334133
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc",
+        "time_s": 19.6,
+        "adapter": null
+      },
+      "hellaswag": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.65,
+        "acc_ci95": [
+          0.61991468226581,
+          0.6789372901704819
+        ],
+        "acc_norm": 0.845,
+        "acc_norm_ci95": [
+          0.8212531610625791,
+          0.866106375540892
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 52.2,
+        "adapter": null
+      },
+      "arc_c": {
+        "n": 1172,
+        "n_errors": 0,
+        "acc": 0.6049488054607508,
+        "acc_ci95": [
+          0.5766616925278556,
+          0.6325501856058224
+        ],
+        "acc_norm": 0.6237201365187713,
+        "acc_norm_ci95": [
+          0.5956229228094864,
+          0.6510089660472888
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 31.5,
+        "adapter": null
+      },
+      "wikitext2": {
+        "n": null,
+        "n_errors": 0,
+        "acc": null,
+        "acc_ci95": null,
+        "acc_norm": null,
+        "acc_norm_ci95": null,
+        "ppl": 4.974998907488254,
+        "n_tokens": 299077,
+        "n_windows": 582,
+        "primary_metric": "ppl",
+        "time_s": 167.3,
+        "adapter": null
+      }
+    },
+    "student_instruct": {
+      "mmlu": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.709,
+        "acc_ci95": [
+          0.6800901974232227,
+          0.736310217504677
+        ],
+        "acc_norm": 0.709,
+        "acc_norm_ci95": [
+          0.6800901974232227,
+          0.736310217504677
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc",
+        "time_s": 11.2,
+        "adapter": null
+      },
+      "hellaswag": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.612,
+        "acc_ci95": [
+          0.5814239243327483,
+          0.6417188817530163
+        ],
+        "acc_norm": 0.806,
+        "acc_norm_ci95": [
+          0.7803394531628941,
+          0.8293185706071412
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 27.3,
+        "adapter": null
+      },
+      "arc_c": {
+        "n": 1172,
+        "n_errors": 0,
+        "acc": 0.5307167235494881,
+        "acc_ci95": [
+          0.5020913940947077,
+          0.5591413507249053
+        ],
+        "acc_norm": 0.5503412969283277,
+        "acc_norm_ci95": [
+          0.5217427953041707,
+          0.5786108698168619
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 17.1,
+        "adapter": null
+      },
+      "wikitext2": {
+        "n": null,
+        "n_errors": 0,
+        "acc": null,
+        "acc_ci95": null,
+        "acc_norm": null,
+        "acc_norm_ci95": null,
+        "ppl": 6.508374539306348,
+        "n_tokens": 299077,
+        "n_windows": 582,
+        "primary_metric": "ppl",
+        "time_s": 84.5,
+        "adapter": null
+      }
+    },
+    "student_instruct_S1_seed1234": {
+      "mmlu": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.7,
+        "acc_ci95": [
+          0.6708761388477603,
+          0.7275931577339619
+        ],
+        "acc_norm": 0.7,
+        "acc_norm_ci95": [
+          0.6708761388477603,
+          0.7275931577339619
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc",
+        "time_s": 16.1,
+        "adapter": "$WORKSPACE/runs/S1_seed1234/adapter"
+      },
+      "hellaswag": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.613,
+        "acc_ci95": [
+          0.5824343264293439,
+          0.6427008261393292
+        ],
+        "acc_norm": 0.797,
+        "acc_norm_ci95": [
+          0.7709550840057208,
+          0.8207718214181371
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 42.1,
+        "adapter": "$WORKSPACE/runs/S1_seed1234/adapter"
+      },
+      "arc_c": {
+        "n": 1172,
+        "n_errors": 0,
+        "acc": 0.5187713310580204,
+        "acc_ci95": [
+          0.49015130490737335,
+          0.5472687058157235
+        ],
+        "acc_norm": 0.5341296928327645,
+        "acc_norm_ci95": [
+          0.5055058485497201,
+          0.5625305345831833
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 27.4,
+        "adapter": "$WORKSPACE/runs/S1_seed1234/adapter"
+      },
+      "wikitext2": {
+        "n": null,
+        "n_errors": 0,
+        "acc": null,
+        "acc_ci95": null,
+        "acc_norm": null,
+        "acc_norm_ci95": null,
+        "ppl": 6.382971221331258,
+        "n_tokens": 299077,
+        "n_windows": 582,
+        "primary_metric": "ppl",
+        "time_s": 126.0,
+        "adapter": "$WORKSPACE/runs/S1_seed1234/adapter"
+      }
+    },
+    "student_instruct_S1_seed42": {
+      "mmlu": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.7,
+        "acc_ci95": [
+          0.6708761388477603,
+          0.7275931577339619
+        ],
+        "acc_norm": 0.7,
+        "acc_norm_ci95": [
+          0.6708761388477603,
+          0.7275931577339619
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc",
+        "time_s": 16.2,
+        "adapter": "$WORKSPACE/runs/S1_seed42/adapter"
+      },
+      "hellaswag": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.614,
+        "acc_ci95": [
+          0.5834448618165822,
+          0.6436826372349995
+        ],
+        "acc_norm": 0.803,
+        "acc_norm_ci95": [
+          0.7772091458813424,
+          0.826471838439967
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 41.9,
+        "adapter": "$WORKSPACE/runs/S1_seed42/adapter"
+      },
+      "arc_c": {
+        "n": 1172,
+        "n_errors": 0,
+        "acc": 0.5136518771331058,
+        "acc_ci95": [
+          0.4850391145521469,
+          0.5421754387010145
+        ],
+        "acc_norm": 0.523037542662116,
+        "acc_norm_ci95": [
+          0.49441374944034666,
+          0.551510809174363
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 27.4,
+        "adapter": "$WORKSPACE/runs/S1_seed42/adapter"
+      },
+      "wikitext2": {
+        "n": null,
+        "n_errors": 0,
+        "acc": null,
+        "acc_ci95": null,
+        "acc_norm": null,
+        "acc_norm_ci95": null,
+        "ppl": 6.379839151635299,
+        "n_tokens": 299077,
+        "n_windows": 582,
+        "primary_metric": "ppl",
+        "time_s": 126.1,
+        "adapter": "$WORKSPACE/runs/S1_seed42/adapter"
+      }
+    },
+    "student_instruct_S2_seed1234": {
+      "mmlu": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.714,
+        "acc_ci95": [
+          0.6852148432781764,
+          0.7411473040642664
+        ],
+        "acc_norm": 0.714,
+        "acc_norm_ci95": [
+          0.6852148432781764,
+          0.7411473040642664
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc",
+        "time_s": 16.6,
+        "adapter": "$WORKSPACE/runs/S2_seed1234/adapter"
+      },
+      "hellaswag": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.61,
+        "acc_ci95": [
+          0.5794035192590353,
+          0.639754593860912
+        ],
+        "acc_norm": 0.794,
+        "acc_norm_ci95": [
+          0.7678312569285212,
+          0.8179186090466107
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 42.3,
+        "adapter": "$WORKSPACE/runs/S2_seed1234/adapter"
+      },
+      "arc_c": {
+        "n": 1172,
+        "n_errors": 0,
+        "acc": 0.5460750853242321,
+        "acc_ci95": [
+          0.5174669778488303,
+          0.5743821393805895
+        ],
+        "acc_norm": 0.5674061433447098,
+        "acc_norm_ci95": [
+          0.5388671814352743,
+          0.59550467525221
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 27.5,
+        "adapter": "$WORKSPACE/runs/S2_seed1234/adapter"
+      },
+      "wikitext2": {
+        "n": null,
+        "n_errors": 0,
+        "acc": null,
+        "acc_ci95": null,
+        "acc_norm": null,
+        "acc_norm_ci95": null,
+        "ppl": 6.6738451018076175,
+        "n_tokens": 299077,
+        "n_windows": 582,
+        "primary_metric": "ppl",
+        "time_s": 126.2,
+        "adapter": "$WORKSPACE/runs/S2_seed1234/adapter"
+      }
+    },
+    "student_instruct_S2_seed42": {
+      "mmlu": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.708,
+        "acc_ci95": [
+          0.6790657628430813,
+          0.7353423056019098
+        ],
+        "acc_norm": 0.708,
+        "acc_norm_ci95": [
+          0.6790657628430813,
+          0.7353423056019098
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc",
+        "time_s": 16.2,
+        "adapter": "$WORKSPACE/runs/S2_seed42/adapter"
+      },
+      "hellaswag": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.614,
+        "acc_ci95": [
+          0.5834448618165822,
+          0.6436826372349995
+        ],
+        "acc_norm": 0.795,
+        "acc_norm_ci95": [
+          0.7688722987548496,
+          0.8188699137031908
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 41.9,
+        "adapter": "$WORKSPACE/runs/S2_seed42/adapter"
+      },
+      "arc_c": {
+        "n": 1172,
+        "n_errors": 0,
+        "acc": 0.53839590443686,
+        "acc_ci95": [
+          0.5097757963669036,
+          0.5667651346576128
+        ],
+        "acc_norm": 0.5631399317406144,
+        "acc_norm_ci95": [
+          0.5345829050472249,
+          0.5912844037486465
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 27.4,
+        "adapter": "$WORKSPACE/runs/S2_seed42/adapter"
+      },
+      "wikitext2": {
+        "n": null,
+        "n_errors": 0,
+        "acc": null,
+        "acc_ci95": null,
+        "acc_norm": null,
+        "acc_norm_ci95": null,
+        "ppl": 6.666736125461199,
+        "n_tokens": 299077,
+        "n_windows": 582,
+        "primary_metric": "ppl",
+        "time_s": 126.0,
+        "adapter": "$WORKSPACE/runs/S2_seed42/adapter"
+      }
+    },
+    "student_instruct_S3_seed1234": {
+      "mmlu": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.705,
+        "acc_ci95": [
+          0.6759934393433294,
+          0.7324375896529359
+        ],
+        "acc_norm": 0.705,
+        "acc_norm_ci95": [
+          0.6759934393433294,
+          0.7324375896529359
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc",
+        "time_s": 16.3,
+        "adapter": "$WORKSPACE/runs/S3_seed1234/adapter"
+      },
+      "hellaswag": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.607,
+        "acc_ci95": [
+          0.5763739066807299,
+          0.6368071669904916
+        ],
+        "acc_norm": 0.794,
+        "acc_norm_ci95": [
+          0.7678312569285212,
+          0.8179186090466107
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 42.1,
+        "adapter": "$WORKSPACE/runs/S3_seed1234/adapter"
+      },
+      "arc_c": {
+        "n": 1172,
+        "n_errors": 0,
+        "acc": 0.5435153583617748,
+        "acc_ci95": [
+          0.514902495906901,
+          0.571843892587551
+        ],
+        "acc_norm": 0.5665529010238908,
+        "acc_norm_ci95": [
+          0.5380101558758568,
+          0.5946607912333051
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 28.0,
+        "adapter": "$WORKSPACE/runs/S3_seed1234/adapter"
+      },
+      "wikitext2": {
+        "n": null,
+        "n_errors": 0,
+        "acc": null,
+        "acc_ci95": null,
+        "acc_norm": null,
+        "acc_norm_ci95": null,
+        "ppl": 6.6744213019327745,
+        "n_tokens": 299077,
+        "n_windows": 582,
+        "primary_metric": "ppl",
+        "time_s": 126.3,
+        "adapter": "$WORKSPACE/runs/S3_seed1234/adapter"
+      }
+    },
+    "student_instruct_S3_seed42": {
+      "mmlu": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.703,
+        "acc_ci95": [
+          0.6739460357093027,
+          0.7305003003211453
+        ],
+        "acc_norm": 0.703,
+        "acc_norm_ci95": [
+          0.6739460357093027,
+          0.7305003003211453
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc",
+        "time_s": 16.3,
+        "adapter": "$WORKSPACE/runs/S3_seed42/adapter"
+      },
+      "hellaswag": {
+        "n": 1000,
+        "n_errors": 0,
+        "acc": 0.612,
+        "acc_ci95": [
+          0.5814239243327483,
+          0.6417188817530163
+        ],
+        "acc_norm": 0.797,
+        "acc_norm_ci95": [
+          0.7709550840057208,
+          0.8207718214181371
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 42.0,
+        "adapter": "$WORKSPACE/runs/S3_seed42/adapter"
+      },
+      "arc_c": {
+        "n": 1172,
+        "n_errors": 0,
+        "acc": 0.5264505119453925,
+        "acc_ci95": [
+          0.49782520286152376,
+          0.5549029940664765
+        ],
+        "acc_norm": 0.5563139931740614,
+        "acc_norm_ci95": [
+          0.5277324785372987,
+          0.5845275536319919
+        ],
+        "ppl": null,
+        "n_tokens": null,
+        "n_windows": null,
+        "primary_metric": "acc_norm",
+        "time_s": 27.4,
+        "adapter": "$WORKSPACE/runs/S3_seed42/adapter"
+      },
+      "wikitext2": {
+        "n": null,
+        "n_errors": 0,
+        "acc": null,
+        "acc_ci95": null,
+        "acc_norm": null,
+        "acc_norm_ci95": null,
+        "ppl": 6.6743819307376375,
+        "n_tokens": 299077,
+        "n_windows": 582,
+        "primary_metric": "ppl",
+        "time_s": 126.2,
+        "adapter": "$WORKSPACE/runs/S3_seed42/adapter"
+      }
+    }
+  },
+  "meta": {
+    "timestamp_utc": "2026-10-18T17:31:30+00:00",
+    "git": {
+      "branch": null,
+      "dirty": null
+    },
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.9.1+cpu",
+      "transformers": "4.56.2",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "datasets": null,
+      "vllm": null,
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.4",
+      "pandas": null,
+      "scipy": null,
+      "pyyaml": "6.0.2"
+    },
+    "gpu": {
+      "cuda_available": false
+    },
+    "script": "general_report.py"
+  }
+}

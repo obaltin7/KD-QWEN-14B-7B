@@ -1,0 +1,491 @@
+{
+  "task": "mmlu",
+  "model_key": "student_instruct",
+  "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+  "adapter": "$WORKSPACE/runs/S1_seed42/adapter",
+  "limit": null,
+  "chat_template": false,
+  "dtype": "bfloat16",
+  "load_s": 50.4,
+  "n": 1000,
+  "n_errors": 0,
+  "acc": 0.7,
+  "acc_ci95": [
+    0.6708761388477603,
+    0.7275931577339619
+  ],
+  "acc_norm": 0.7,
+  "acc_norm_ci95": [
+    0.6708761388477603,
+    0.7275931577339619
+  ],
+  "primary_metric": "acc",
+  "note": "failed examples count as incorrect (included in n)",
+  "acc_norm_note": "MMLU choices are single letters; acc_norm = acc",
+  "by_subject": {
+    "abstract_algebra": {
+      "n": 7,
+      "acc": 0.42857142857142855
+    },
+    "anatomy": {
+      "n": 10,
+      "acc": 0.3
+    },
+    "astronomy": {
+      "n": 11,
+      "acc": 0.8181818181818182
+    },
+    "business_ethics": {
+      "n": 7,
+      "acc": 0.5714285714285714
+    },
+    "clinical_knowledge": {
+      "n": 19,
+      "acc": 0.8421052631578947
+    },
+    "college_biology": {
+      "n": 10,
+      "acc": 0.8
+    },
+    "college_chemistry": {
+      "n": 7,
+      "acc": 0.0
+    },
+    "college_computer_science": {
+      "n": 7,
+      "acc": 0.8571428571428571
+    },
+    "college_mathematics": {
+      "n": 7,
+      "acc": 0.5714285714285714
+    },
+    "college_medicine": {
+      "n": 12,
+      "acc": 0.75
+    },
+    "college_physics": {
+      "n": 7,
+      "acc": 0.2857142857142857
+    },
+    "computer_security": {
+      "n": 7,
+      "acc": 1.0
+    },
+    "conceptual_physics": {
+      "n": 17,
+      "acc": 0.7647058823529411
+    },
+    "econometrics": {
+      "n": 8,
+      "acc": 0.875
+    },
+    "electrical_engineering": {
+      "n": 10,
+      "acc": 0.7
+    },
+    "elementary_mathematics": {
+      "n": 27,
+      "acc": 0.7037037037037037
+    },
+    "formal_logic": {
+      "n": 9,
+      "acc": 0.4444444444444444
+    },
+    "global_facts": {
+      "n": 7,
+      "acc": 0.2857142857142857
+    },
+    "high_school_biology": {
+      "n": 22,
+      "acc": 0.7727272727272727
+    },
+    "high_school_chemistry": {
+      "n": 14,
+      "acc": 0.8571428571428571
+    },
+    "high_school_computer_science": {
+      "n": 7,
+      "acc": 0.5714285714285714
+    },
+    "high_school_european_history": {
+      "n": 12,
+      "acc": 0.8333333333333334
+    },
+    "high_school_geography": {
+      "n": 14,
+      "acc": 0.7857142857142857
+    },
+    "high_school_government_and_politics": {
+      "n": 14,
+      "acc": 0.9285714285714286
+    },
+    "high_school_macroeconomics": {
+      "n": 28,
+      "acc": 0.8571428571428571
+    },
+    "high_school_mathematics": {
+      "n": 19,
+      "acc": 0.47368421052631576
+    },
+    "high_school_microeconomics": {
+      "n": 17,
+      "acc": 0.8235294117647058
+    },
+    "high_school_physics": {
+      "n": 11,
+      "acc": 0.45454545454545453
+    },
+    "high_school_psychology": {
+      "n": 39,
+      "acc": 0.9230769230769231
+    },
+    "high_school_statistics": {
+      "n": 15,
+      "acc": 0.7333333333333333
+    },
+    "high_school_us_history": {
+      "n": 15,
+      "acc": 0.8666666666666667
+    },
+    "high_school_world_history": {
+      "n": 17,
+      "acc": 0.8235294117647058
+    },
+    "human_aging": {
+      "n": 16,
+      "acc": 0.875
+    },
+    "human_sexuality": {
+      "n": 9,
+      "acc": 0.5555555555555556
+    },
+    "international_law": {
+      "n": 9,
+      "acc": 0.8888888888888888
+    },
+    "jurisprudence": {
+      "n": 8,
+      "acc": 0.875
+    },
+    "logical_fallacies": {
+      "n": 12,
+      "acc": 0.9166666666666666
+    },
+    "machine_learning": {
+      "n": 8,
+      "acc": 0.125
+    },
+    "management": {
+      "n": 7,
+      "acc": 0.7142857142857143
+    },
+    "marketing": {
+      "n": 17,
+      "acc": 0.8235294117647058
+    },
+    "medical_genetics": {
+      "n": 7,
+      "acc": 0.8571428571428571
+    },
+    "miscellaneous": {
+      "n": 56,
+      "acc": 0.875
+    },
+    "moral_disputes": {
+      "n": 25,
+      "acc": 0.76
+    },
+    "moral_scenarios": {
+      "n": 64,
+      "acc": 0.453125
+    },
+    "nutrition": {
+      "n": 22,
+      "acc": 0.7727272727272727
+    },
+    "philosophy": {
+      "n": 22,
+      "acc": 0.7727272727272727
+    },
+    "prehistory": {
+      "n": 23,
+      "acc": 0.9130434782608695
+    },
+    "professional_accounting": {
+      "n": 20,
+      "acc": 0.4
+    },
+    "professional_law": {
+      "n": 109,
+      "acc": 0.4954128440366973
+    },
+    "professional_medicine": {
+      "n": 19,
+      "acc": 0.6842105263157895
+    },
+    "professional_psychology": {
+      "n": 44,
+      "acc": 0.75
+    },
+    "public_relations": {
+      "n": 8,
+      "acc": 0.75
+    },
+    "security_studies": {
+      "n": 17,
+      "acc": 0.7647058823529411
+    },
+    "sociology": {
+      "n": 14,
+      "acc": 0.9285714285714286
+    },
+    "us_foreign_policy": {
+      "n": 7,
+      "acc": 0.8571428571428571
+    },
+    "virology": {
+      "n": 12,
+      "acc": 0.5
+    },
+    "world_religions": {
+      "n": 12,
+      "acc": 0.75
+    }
+  },
+  "time_s": 16.2,
+  "final_batch_size": 16,
+  "meta": {
+    "timestamp_utc": "2026-10-12T21:24:25+00:00",
+    "git": {
+      "branch": "main",
+      "dirty": true
+    },
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-100-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.8.0+cu128",
+      "transformers": "4.56.2",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "datasets": "4.1.1",
+      "vllm": "0.10.2",
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.2.6",
+      "pandas": "2.3.2",
+      "scipy": "1.16.2",
+      "pyyaml": "6.0.2"
+    },
+    "gpu": {
+      "cuda_available": true,
+      "cuda_version": "12.8",
+      "device_count": 1,
+      "names": [
+        "NVIDIA A100-SXM4-80GB"
+      ]
+    },
+    "config": {
+      "sha256": "79d18ce991ccfe25962b457de68d3f7ad5db6db0ae30166308a717577ccfd21c",
+      "config": {
+        "paths": {
+          "workspace": "$WORKSPACE",
+          "repo": "$WORKSPACE/KD-QWEN-14B-7B",
+          "hf_home": "$WORKSPACE/hf_cache",
+          "venv": "$WORKSPACE/venv",
+          "splits_dir": "data/splits",
+          "results_dir": "results",
+          "checkpoints_dir": "$WORKSPACE/checkpoints"
+        },
+        "models": {
+          "teacher": "Qwen/Qwen2.5-14B-Instruct",
+          "student_base": "Qwen/Qwen2.5-7B",
+          "student_instruct": "Qwen/Qwen2.5-7B-Instruct",
+          "dtype": "bfloat16"
+        },
+        "student": "student_instruct",
+        "primary_metric": {
+          "task": "gsm8k",
+          "shots": 0,
+          "scoring": "flexible"
+        },
+        "data": {
+          "dataset": "openai/gsm8k",
+          "config": "main",
+          "train_size": 7473,
+          "test_size": 1319
+        },
+        "split": {
+          "val_size": 300,
+          "seed": 42,
+          "fewshot_k": 4,
+          "fewshot_seed": 42
+        },
+        "eval": {
+          "decoding": "greedy",
+          "max_new_tokens": 512,
+          "shots": [
+            0,
+            4
+          ],
+          "split": "test",
+          "seed": 42,
+          "stop_sequences": [
+            "\n\nQuestion:",
+            "\nQuestion:"
+          ],
+          "stop_tokens": [
+            "<|endoftext|>",
+            "<|im_end|>"
+          ],
+          "vllm": {
+            "gpu_memory_utilization": 0.85,
+            "max_model_len": 4096,
+            "enable_prefix_caching": true
+          },
+          "hf": {
+            "batch_size": 16
+          },
+          "out_dir": "results/day1/eval"
+        },
+        "decision": {
+          "min_gap_points": 5,
+          "comfortable_gap_points": 8,
+          "preference": [
+            "student_base",
+            "student_instruct"
+          ]
+        },
+        "train": {
+          "seeds": [
+            42,
+            1234
+          ],
+          "runs_dir": "$WORKSPACE/runs",
+          "results_dir": "results/train",
+          "lr": 0.0001,
+          "epochs": 2,
+          "effective_batch": 16,
+          "micro_batch": 4,
+          "max_seq_len": 512,
+          "eos_token": "<|endoftext|>",
+          "warmup_ratio": 0.03,
+          "weight_decay": 0.0,
+          "max_grad_norm": 1.0,
+          "gradient_checkpointing": true,
+          "attn_implementation": "sdpa",
+          "ckpt_every_steps": null,
+          "lora": {
+            "r": 16,
+            "alpha": 32,
+            "dropout": 0.05,
+            "target_modules": [
+              "q_proj",
+              "k_proj",
+              "v_proj",
+              "o_proj",
+              "gate_proj",
+              "up_proj",
+              "down_proj"
+            ]
+          },
+          "configs": {
+            "S1": {
+              "ce": true,
+              "kd": false,
+              "hidden": false
+            },
+            "S2": {
+              "ce": true,
+              "kd": true,
+              "hidden": false
+            },
+            "S3": {
+              "ce": true,
+              "kd": true,
+              "hidden": true
+            }
+          },
+          "kd": {
+            "tau": 2.0,
+            "alpha": 0.5,
+            "kl_direction": "forward",
+            "vocab_cut": 151665
+          },
+          "hidden": {
+            "beta": 1.0,
+            "pairs": [
+              [
+                7,
+                12
+              ],
+              [
+                14,
+                24
+              ],
+              [
+                21,
+                36
+              ],
+              [
+                28,
+                48
+              ]
+            ],
+            "student_dim": 3584,
+            "teacher_dim": 5120,
+            "projection": "shared",
+            "norm": "layer_norm_no_affine"
+          }
+        },
+        "general": {
+          "out_dir": "results/general",
+          "seed": 42,
+          "batch_size": 16,
+          "max_length": 4096,
+          "datasets": {
+            "mmlu": {
+              "path": "cais/mmlu",
+              "name": "all",
+              "split": "test",
+              "n": 1000
+            },
+            "hellaswag": {
+              "path": "Rowan/hellaswag",
+              "name": null,
+              "split": "validation",
+              "n": 1000,
+              "fallback_revision": "refs/convert/parquet"
+            },
+            "arc_c": {
+              "path": "allenai/ai2_arc",
+              "name": "ARC-Challenge",
+              "split": "test",
+              "n": "all"
+            },
+            "wikitext2": {
+              "path": "Salesforce/wikitext",
+              "name": "wikitext-2-raw-v1",
+              "split": "test",
+              "n": "all"
+            }
+          },
+          "wikitext": {
+            "window": 2048,
+            "stride": 512,
+            "batch_size": 4
+          }
+        },
+        "_config_path": "$WORKSPACE/KD-QWEN-14B-7B/configs/base.yaml"
+      }
+    },
+    "script": "eval_general.py",
+    "argv": [
+      "--model",
+      "student_instruct",
+      "--tasks",
+      "all",
+      "--adapter",
+      "$WORKSPACE/runs/S1_seed42/adapter"
+    ]
+  }
+}

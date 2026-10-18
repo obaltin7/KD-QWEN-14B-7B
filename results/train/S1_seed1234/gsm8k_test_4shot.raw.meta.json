@@ -1,0 +1,270 @@
+{
+  "model_key": "student_instruct",
+  "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+  "engine": "vllm",
+  "shots": 4,
+  "split": "test",
+  "limit": null,
+  "adapter": "$WORKSPACE/runs/S1_seed1234/adapter",
+  "load_s": 88.0,
+  "gen_s": 99.3,
+  "tokens_per_s": 1344.7,
+  "decoding": {
+    "greedy": true,
+    "max_new_tokens": 512,
+    "stop_sequences": [
+      "\n\nQuestion:",
+      "\nQuestion:"
+    ],
+    "stop_token_ids": [
+      151643,
+      151645
+    ],
+    "repetition_penalty": 1.0,
+    "chat_template": false
+  },
+  "example_prompt": "Question: Omar buys a 12-ounce cup of coffee every morning on the way to work. On the way to work, he drinks one-quarter of the cup. When he gets to his office, he drinks another half of the cup. He forgets to drink any more of his coffee once he starts working, and when he remembers his coffee, he only drinks 1 ounce of the remaining amount because it is cold. How many ounces will be left in the cup afterward?\nAnswer: Omar drinks 1/4 * 12 = 12/4 = 3 ounces on the way to work.\nOmar drinks 1/2 * 12 = 12/2 = 6 ounces when he gets to his office.\nWhen he drinks 1 ounce more, he will have drunk 3 + 6 + 1 = 10 ounces.\nThus, there will be 12 - 10 = 2 ounces left in the cup afterward.\n#### 2\n\nQuestion: A charcoal grill burns fifteen coals to ash every twenty minutes of grilling. The grill ran for long enough to burn three bags of coals. Each bag of coal contains 60 coals. How long did the grill run?\nAnswer: The grill burned 3 * 60 = 180 coals.\nIt takes 20 minutes to burn 15 coals, so the grill ran for 180 / 15 * 20 = 240 minutes.\n#### 240\n\nQuestion: Randy just turned 12 and started playing the piano. His friend Sheila told him about the 10,000-hour rule which says, after 10,000 hours of practice, you become an expert or master in your field. If Randy wants to become a piano expert before he is 20, how many hours a day will he need to practice if he practices every day, Monday – Friday, and takes two weeks off for vacation each year?\nAnswer: Randy has 20 – 12 = 8 years until he is 20.\nHe must practice 10,000 hours / 8 years = 1,250 hours a year to become an expert.\nThere are 52 weeks in a year – 2 weeks of vacation Randy plans to take = 50 weeks of practice for Randy.\nRandy will practice Monday – Friday, which is 5 days a week, so 50 weeks x 5 days = 250 days of practice each year.\nRandy will need to practice 1250 hours / 250 days = 5 hours each day.\n#### 5\n\nQuestion: Lisa bought a new iPhone for $1000. She bought a phone contract that costs $200/month, a case that costs 20% of the cost of the phone, and headphones that cost half as much as the case. How much will Lisa spend on her phone in the first year?\nAnswer: First find the cost of the case: $1000 * 20% = $200\nThen find the cost of the headphones: $200 / 2 = $100\nThen find how much the phone contract will cost over a year: $200/month * 12 months/year = $2400\nFinally, add the cost of the phone, accessories, and plan over the first year to find the total: $2400 + $100 + $200 + $1000 = $3700\n#### 3700\n\nQuestion: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:",
+  "records": "gsm8k_test_4shot.jsonl",
+  "raw_records": "gsm8k_test_4shot.raw.jsonl",
+  "meta": {
+    "timestamp_utc": "2026-10-12T23:26:53+00:00",
+    "git": {
+      "branch": "main",
+      "dirty": true
+    },
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-100-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.8.0+cu128",
+      "transformers": "4.56.2",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "datasets": "4.1.1",
+      "vllm": "0.10.2",
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.2.6",
+      "pandas": "2.3.2",
+      "scipy": "1.16.2",
+      "pyyaml": "6.0.2"
+    },
+    "gpu": {
+      "cuda_available": true,
+      "cuda_version": "12.8",
+      "device_count": 1,
+      "names": [
+        "NVIDIA A100-SXM4-80GB"
+      ]
+    },
+    "config": {
+      "sha256": "79d18ce991ccfe25962b457de68d3f7ad5db6db0ae30166308a717577ccfd21c",
+      "config": {
+        "paths": {
+          "workspace": "$WORKSPACE",
+          "repo": "$WORKSPACE/KD-QWEN-14B-7B",
+          "hf_home": "$WORKSPACE/hf_cache",
+          "venv": "$WORKSPACE/venv",
+          "splits_dir": "data/splits",
+          "results_dir": "results",
+          "checkpoints_dir": "$WORKSPACE/checkpoints"
+        },
+        "models": {
+          "teacher": "Qwen/Qwen2.5-14B-Instruct",
+          "student_base": "Qwen/Qwen2.5-7B",
+          "student_instruct": "Qwen/Qwen2.5-7B-Instruct",
+          "dtype": "bfloat16"
+        },
+        "student": "student_instruct",
+        "primary_metric": {
+          "task": "gsm8k",
+          "shots": 0,
+          "scoring": "flexible"
+        },
+        "data": {
+          "dataset": "openai/gsm8k",
+          "config": "main",
+          "train_size": 7473,
+          "test_size": 1319
+        },
+        "split": {
+          "val_size": 300,
+          "seed": 42,
+          "fewshot_k": 4,
+          "fewshot_seed": 42
+        },
+        "eval": {
+          "decoding": "greedy",
+          "max_new_tokens": 512,
+          "shots": [
+            0,
+            4
+          ],
+          "split": "test",
+          "seed": 42,
+          "stop_sequences": [
+            "\n\nQuestion:",
+            "\nQuestion:"
+          ],
+          "stop_tokens": [
+            "<|endoftext|>",
+            "<|im_end|>"
+          ],
+          "vllm": {
+            "gpu_memory_utilization": 0.85,
+            "max_model_len": 4096,
+            "enable_prefix_caching": true
+          },
+          "hf": {
+            "batch_size": 16
+          },
+          "out_dir": "results/day1/eval"
+        },
+        "decision": {
+          "min_gap_points": 5,
+          "comfortable_gap_points": 8,
+          "preference": [
+            "student_base",
+            "student_instruct"
+          ]
+        },
+        "train": {
+          "seeds": [
+            42,
+            1234
+          ],
+          "runs_dir": "$WORKSPACE/runs",
+          "results_dir": "results/train",
+          "lr": 0.0001,
+          "epochs": 2,
+          "effective_batch": 16,
+          "micro_batch": 4,
+          "max_seq_len": 512,
+          "eos_token": "<|endoftext|>",
+          "warmup_ratio": 0.03,
+          "weight_decay": 0.0,
+          "max_grad_norm": 1.0,
+          "gradient_checkpointing": true,
+          "attn_implementation": "sdpa",
+          "ckpt_every_steps": null,
+          "lora": {
+            "r": 16,
+            "alpha": 32,
+            "dropout": 0.05,
+            "target_modules": [
+              "q_proj",
+              "k_proj",
+              "v_proj",
+              "o_proj",
+              "gate_proj",
+              "up_proj",
+              "down_proj"
+            ]
+          },
+          "configs": {
+            "S1": {
+              "ce": true,
+              "kd": false,
+              "hidden": false
+            },
+            "S2": {
+              "ce": true,
+              "kd": true,
+              "hidden": false
+            },
+            "S3": {
+              "ce": true,
+              "kd": true,
+              "hidden": true
+            }
+          },
+          "kd": {
+            "tau": 2.0,
+            "alpha": 0.5,
+            "kl_direction": "forward",
+            "vocab_cut": 151665
+          },
+          "hidden": {
+            "beta": 1.0,
+            "pairs": [
+              [
+                7,
+                12
+              ],
+              [
+                14,
+                24
+              ],
+              [
+                21,
+                36
+              ],
+              [
+                28,
+                48
+              ]
+            ],
+            "student_dim": 3584,
+            "teacher_dim": 5120,
+            "projection": "shared",
+            "norm": "layer_norm_no_affine"
+          }
+        },
+        "general": {
+          "out_dir": "results/general",
+          "seed": 42,
+          "batch_size": 16,
+          "max_length": 4096,
+          "datasets": {
+            "mmlu": {
+              "path": "cais/mmlu",
+              "name": "all",
+              "split": "test",
+              "n": 1000
+            },
+            "hellaswag": {
+              "path": "Rowan/hellaswag",
+              "name": null,
+              "split": "validation",
+              "n": 1000,
+              "fallback_revision": "refs/convert/parquet"
+            },
+            "arc_c": {
+              "path": "allenai/ai2_arc",
+              "name": "ARC-Challenge",
+              "split": "test",
+              "n": "all"
+            },
+            "wikitext2": {
+              "path": "Salesforce/wikitext",
+              "name": "wikitext-2-raw-v1",
+              "split": "test",
+              "n": "all"
+            }
+          },
+          "wikitext": {
+            "window": 2048,
+            "stride": 512,
+            "batch_size": 4
+          }
+        },
+        "_config_path": "$WORKSPACE/KD-QWEN-14B-7B/configs/base.yaml"
+      }
+    },
+    "script": "eval_gsm8k.py",
+    "argv": [
+      "--model",
+      "student_instruct",
+      "--split",
+      "test",
+      "--shots",
+      "4",
+      "--engine",
+      "vllm",
+      "--adapter",
+      "$WORKSPACE/runs/S1_seed1234/adapter",
+      "--out",
+      "results/train/S1_seed1234/gsm8k_test_4shot"
+    ],
+    "cuda_visible_devices": null
+  }
+}

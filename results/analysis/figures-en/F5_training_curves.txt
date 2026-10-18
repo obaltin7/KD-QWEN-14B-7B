@@ -1,0 +1,1 @@
+Training curves (25-step moving average; solid line seed 42, dashed seed 1234). (a) CE on answer tokens (S1, S2, S3). (b) Forward KL scaled by τ² (S2, S3). (c) Intermediate-layer feature loss (S3; mean over the four layer pairs, layer-normalised MSE).

@@ -1,0 +1,27 @@
+{
+  "steps_done": 898,
+  "total_steps": 898,
+  "steps_per_epoch": 449,
+  "epochs": 2,
+  "effective_batch": 16,
+  "micro_batch": 4,
+  "warmup_steps": 27,
+  "lr": 0.0001,
+  "seed": 1234,
+  "n_examples": 7173,
+  "n_trainable_lora": 40370176,
+  "n_projector_params": 0,
+  "data_order_sha256": "1472a3d4d2507182e3354a072cc19d0692832573d0aa1b0a7ad936554fcf07c3",
+  "final": {
+    "loss": 0.07681589161511511,
+    "ce": 0.07681589260458814,
+    "kl": null,
+    "feat": null
+  },
+  "any_nonfinite": false,
+  "wall_time_s": 1300.900073572062,
+  "peak_mem_gb": 17.43267072,
+  "mean_step_time_s": 1.440097081903202,
+  "mean_tokens_per_s": 1717.9144479798372,
+  "completed": true
+}

@@ -1,0 +1,311 @@
+{
+  "runs": {
+    "S1_seed42_lr1e-4": {
+      "train": {
+        "lr": 0.0001,
+        "steps_done": 898,
+        "total_steps": 898,
+        "completed": true,
+        "wall_time_s": 1307.1460175458342,
+        "peak_mem_gb": 17.473324544,
+        "final": {
+          "loss": 0.08066698864568025,
+          "ce": 0.080666989883626,
+          "kl": null,
+          "feat": null
+        },
+        "any_nonfinite": false
+      },
+      "divergence": {
+        "checked": true,
+        "first10pct_loss": 0.3216887501099806,
+        "last10pct_loss": 0.06996901523259082,
+        "diverged": false,
+        "any_nonfinite": false
+      },
+      "val": {
+        "n": 300,
+        "accuracy_flexible": 0.8566666666666667,
+        "ci95_flexible": [
+          0.8124994224672467,
+          0.8918152579187667
+        ],
+        "accuracy_strict": 0.8566666666666667,
+        "ci95_strict": [
+          0.8124994224672467,
+          0.8918152579187667
+        ],
+        "format_error_rate": 0.0,
+        "truncated_rate": 0.0
+      }
+    },
+    "S1_seed42_lr2e-4": {
+      "train": {
+        "lr": 0.0002,
+        "steps_done": 898,
+        "total_steps": 898,
+        "completed": true,
+        "wall_time_s": 1312.3140627406538,
+        "peak_mem_gb": 17.473324544,
+        "final": {
+          "loss": 0.06310877891955897,
+          "ce": 0.06310877977559581,
+          "kl": null,
+          "feat": null
+        },
+        "any_nonfinite": false
+      },
+      "divergence": {
+        "checked": true,
+        "first10pct_loss": 0.2885089648908444,
+        "last10pct_loss": 0.05443595242267998,
+        "diverged": false,
+        "any_nonfinite": false
+      },
+      "val": {
+        "n": 300,
+        "accuracy_flexible": 0.84,
+        "ci95_flexible": [
+          0.7942563247581993,
+          0.8771464546751966
+        ],
+        "accuracy_strict": 0.84,
+        "ci95_strict": [
+          0.7942563247581993,
+          0.8771464546751966
+        ],
+        "format_error_rate": 0.0,
+        "truncated_rate": 0.0
+      }
+    }
+  },
+  "smoke": {
+    "S1": {
+      "steps": 20,
+      "peak_mem_gb": 17.269188096,
+      "tokens_per_s": 1691.580731925394,
+      "steps_per_s": 0.6640544475755114,
+      "mean_step_time_s": 1.5059006134979427,
+      "first5": [
+        {
+          "step": 1,
+          "ce": 1.1026541960077512,
+          "kl": null,
+          "feat": null,
+          "loss": 1.102654218673706,
+          "grad_norm": 3.5053389072418213
+        },
+        {
+          "step": 2,
+          "ce": 1.1460859360596423,
+          "kl": null,
+          "feat": null,
+          "loss": 1.146085947751999,
+          "grad_norm": 3.1336307525634766
+        },
+        {
+          "step": 3,
+          "ce": 0.9498569828605521,
+          "kl": null,
+          "feat": null,
+          "loss": 0.9498569667339325,
+          "grad_norm": 2.893223524093628
+        },
+        {
+          "step": 4,
+          "ce": 1.15937163674942,
+          "kl": null,
+          "feat": null,
+          "loss": 1.1593716144561768,
+          "grad_norm": 3.093231678009033
+        },
+        {
+          "step": 5,
+          "ce": 1.1036685793109455,
+          "kl": null,
+          "feat": null,
+          "loss": 1.1036685556173325,
+          "grad_norm": 3.743748903274536
+        }
+      ],
+      "feat_over_ce_first5": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "any_nonfinite": false,
+      "est_full_run_s": 1352.2987509211525,
+      "n_trainable_lora": 40370176,
+      "n_projector_params": 0
+    },
+    "S2": {
+      "steps": 20,
+      "peak_mem_gb": 48.624807936,
+      "tokens_per_s": 1222.282104884996,
+      "steps_per_s": 0.48025253329623363,
+      "mean_step_time_s": 2.0822378450280263,
+      "first5": [
+        {
+          "step": 1,
+          "ce": 1.1026541960077512,
+          "kl": 2.307918436787996,
+          "feat": null,
+          "loss": 1.7052863836288452,
+          "grad_norm": 4.165928840637207
+        },
+        {
+          "step": 2,
+          "ce": 1.1460859360596423,
+          "kl": 1.9227769564738315,
+          "feat": null,
+          "loss": 1.5344314575195312,
+          "grad_norm": 3.6558260917663574
+        },
+        {
+          "step": 3,
+          "ce": 0.9492766005299218,
+          "kl": 2.2929440322380357,
+          "feat": null,
+          "loss": 1.62111034989357,
+          "grad_norm": 3.6158318519592285
+        },
+        {
+          "step": 4,
+          "ce": 1.155851114995985,
+          "kl": 2.457214616861282,
+          "feat": null,
+          "loss": 1.8065328299999237,
+          "grad_norm": 3.9182140827178955
+        },
+        {
+          "step": 5,
+          "ce": 1.1099101656024426,
+          "kl": 2.56396009773442,
+          "feat": null,
+          "loss": 1.8369351029396057,
+          "grad_norm": 4.988654613494873
+        }
+      ],
+      "feat_over_ce_first5": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "any_nonfinite": false,
+      "est_full_run_s": 1869.8495848351677,
+      "n_trainable_lora": 40370176,
+      "n_projector_params": 0
+    },
+    "S3": {
+      "steps": 20,
+      "peak_mem_gb": 49.667604992,
+      "tokens_per_s": 1164.0380163646225,
+      "steps_per_s": 0.45759953849336704,
+      "mean_step_time_s": 2.185316889288111,
+      "first5": [
+        {
+          "step": 1,
+          "ce": 1.1026541960077512,
+          "kl": 2.307918436787996,
+          "feat": 1.9980357281219285,
+          "loss": 3.7033222317695618,
+          "grad_norm": 4.230391025543213
+        },
+        {
+          "step": 2,
+          "ce": 1.1460859360596423,
+          "kl": 1.9227769564738315,
+          "feat": 1.9985965514956672,
+          "loss": 3.53302800655365,
+          "grad_norm": 3.7273647785186768
+        },
+        {
+          "step": 3,
+          "ce": 0.9468572546715727,
+          "kl": 2.2994431164154285,
+          "feat": 1.9974494306647372,
+          "loss": 3.6205995082855225,
+          "grad_norm": 3.676220417022705
+        },
+        {
+          "step": 4,
+          "ce": 1.1566862641361082,
+          "kl": 2.4547940784484297,
+          "feat": 1.992913038538321,
+          "loss": 3.7986531853675842,
+          "grad_norm": 4.012058258056641
+        },
+        {
+          "step": 5,
+          "ce": 1.1044602740349396,
+          "kl": 2.5601970657339908,
+          "feat": 1.9885565538008325,
+          "loss": 3.8208852410316467,
+          "grad_norm": 5.048041343688965
+        }
+      ],
+      "feat_over_ce_first5": [
+        1.8120238741719559,
+        1.743845281242209,
+        2.109557085621711,
+        1.7229503801765673,
+        1.8004781163708243
+      ],
+      "any_nonfinite": false,
+      "est_full_run_s": 1962.4145665807237,
+      "n_trainable_lora": 40370176,
+      "n_projector_params": 18355200
+    }
+  },
+  "stability": {
+    "nonfinite_any": false,
+    "diverged_any": false,
+    "feat_ratio_rule": {
+      "beta": 1.0,
+      "max_beta_feat_over_ce_first5": 2.109557085621711,
+      "exceeds_10x": false
+    }
+  },
+  "recommended_lr_run": "S1_seed42_lr1e-4",
+  "estimate": {
+    "per_run_eval_s": 451.20000000000005,
+    "train_s_per_cfg": {
+      "S1": 1352.2987509211525,
+      "S2": 1869.8495848351677,
+      "S3": 1962.4145665807237
+    },
+    "total_main_s": 13076.325804674088,
+    "note": "2 seeds x 3 configurations training + GSM8K test (0/4-shot) and general benchmarks per run"
+  },
+  "meta": {
+    "timestamp_utc": "2026-10-18T17:31:29+00:00",
+    "git": {
+      "branch": null,
+      "dirty": null
+    },
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.9.1+cpu",
+      "transformers": "4.56.2",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "datasets": null,
+      "vllm": null,
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.4",
+      "pandas": null,
+      "scipy": null,
+      "pyyaml": "6.0.2"
+    },
+    "gpu": {
+      "cuda_available": false
+    },
+    "script": "pilot_report.py"
+  }
+}

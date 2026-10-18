@@ -1,0 +1,55 @@
+# Virtual environments and caches
+venv/
+.venv/
+env/*
+!env/.gitkeep
+!env/pip_freeze_pod.txt
+hf_cache/
+.cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# IDE and OS artefacts
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Model weights and training outputs
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+checkpoints/
+adapters/
+wandb/
+runs/
+logs/
+
+# Large outputs (small json/jsonl/md/csv results, figures-* and tables-* are committed)
+results/**/*.parquet
+results/**/*.npy
+results/**/*.npz
+results/**/*.arrow
+results/**/raw/
+*.tar
+*.zip
+
+# Temporary files and logs
+*.log
+*.out
+nohup.out
+*.tmp
+main.py

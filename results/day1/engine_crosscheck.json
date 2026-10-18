@@ -1,0 +1,80 @@
+{
+  "model": "student_base",
+  "shots": 0,
+  "n": 50,
+  "scoring_version": "v2",
+  "strict": {
+    "accuracy_vllm": 0.02,
+    "accuracy_hf": 0.0,
+    "accuracy_diff_points": 2.0,
+    "correct_agreement": 0.98,
+    "pred_agreement": 0.98
+  },
+  "flexible": {
+    "accuracy_vllm": 0.84,
+    "accuracy_hf": 0.82,
+    "accuracy_diff_points": 2.0000000000000018,
+    "correct_agreement": 0.94,
+    "pred_agreement": 0.86
+  },
+  "text_exact_match": 0.18,
+  "disagreements_flexible": [
+    {
+      "idx": 2,
+      "gold": "70000",
+      "pred_vllm": "195000",
+      "pred_hf": "65000",
+      "correct_vllm": false,
+      "correct_hf": false
+    },
+    {
+      "idx": 7,
+      "gold": "160",
+      "pred_vllm": "80",
+      "pred_hf": "140",
+      "correct_vllm": false,
+      "correct_hf": false
+    },
+    {
+      "idx": 8,
+      "gold": "45",
+      "pred_vllm": "315",
+      "pred_hf": "235",
+      "correct_vllm": false,
+      "correct_hf": false
+    },
+    {
+      "idx": 13,
+      "gold": "18",
+      "pred_vllm": "18",
+      "pred_hf": "21",
+      "correct_vllm": true,
+      "correct_hf": false
+    },
+    {
+      "idx": 20,
+      "gold": "15",
+      "pred_vllm": "13",
+      "pred_hf": "15",
+      "correct_vllm": false,
+      "correct_hf": true
+    },
+    {
+      "idx": 31,
+      "gold": "80",
+      "pred_vllm": "80",
+      "pred_hf": "46.6666666667",
+      "correct_vllm": true,
+      "correct_hf": false
+    },
+    {
+      "idx": 39,
+      "gold": "18",
+      "pred_vllm": "13.5",
+      "pred_hf": "30",
+      "correct_vllm": false,
+      "correct_hf": false
+    }
+  ],
+  "note": "small text deviations are expected in bf16 due to batching/kernel differences; a warning is issued if flexible answer agreement < 90%; the pipeline does not stop."
+}

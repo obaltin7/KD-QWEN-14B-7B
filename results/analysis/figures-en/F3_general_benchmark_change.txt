@@ -1,0 +1,1 @@
+(a) Accuracy change relative to S0 on the general benchmarks (points; negative = drop): MMLU (n = 1000, acc), HellaSwag (n = 1000, acc_norm), ARC-C (n = 1172, acc_norm). (b) WikiText-2 test perplexity change (Sx − S0; positive = worse). Bars: mean of two seeds; error bars: seed range (min–max).

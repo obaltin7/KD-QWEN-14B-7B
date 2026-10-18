@@ -1,0 +1,17 @@
+Task,Metric,Comparison,Seed,A,B,Difference,95% CI,b,c,p (raw),p (Holm),Significant,Decision
+MMLU,acc,S2−S1,42,70.8,70,0.8,-0.5,2.1,25,17,0.279956,1,not supported
+MMLU,acc,S2−S1,1234,71.4,70,1.4,0.3,2.6,25,11,0.0288167,0.230534,not supported
+MMLU,acc,S3−S1,42,70.3,70,0.3,-0.9,1.5,20,17,0.742829,1,not supported
+MMLU,acc,S3−S1,1234,70.5,70,0.5,-0.6,1.7,20,15,0.49956,1,not supported
+HellaSwag,acc_norm,S2−S1,42,79.5,80.3,-0.8,-1.6,0,4,12,0.0768127,0.537689,not supported
+HellaSwag,acc_norm,S2−S1,1234,79.4,79.7,-0.3,-1.3,0.7,11,14,0.690038,1,not supported
+HellaSwag,acc_norm,S3−S1,42,79.7,80.3,-0.6,-1.4,0.2,5,11,0.210114,1,not supported
+HellaSwag,acc_norm,S3−S1,1234,79.4,79.7,-0.3,-1.3,0.7,11,14,0.690038,1,not supported
+ARC-C,acc_norm,S2−S1,42,56.314,52.3038,4.01024,2.13311,5.88737,89,42,4.9153e-05,0.000589836,supported
+ARC-C,acc_norm,S2−S1,1234,56.7406,53.413,3.32765,1.62116,5.03413,73,34,0.000206375,0.00227012,supported
+ARC-C,acc_norm,S3−S1,42,55.6314,52.3038,3.32765,1.45051,5.2901,87,48,0.000999484,0.00899536,supported
+ARC-C,acc_norm,S3−S1,1234,56.6553,53.413,3.24232,1.45051,5.03626,79,41,0.000666724,0.00666724,supported
+WikiText-2,PPL,S2−S1,42,6.66674,6.37984,0.286897,0.273895,0.30088,,,,,not supported (significant in the opposite direction)
+WikiText-2,PPL,S2−S1,1234,6.67385,6.38297,0.290874,0.277851,0.304996,,,,,not supported (significant in the opposite direction)
+WikiText-2,PPL,S3−S1,42,6.67438,6.37984,0.294543,0.281304,0.308547,,,,,not supported (significant in the opposite direction)
+WikiText-2,PPL,S3−S1,1234,6.67442,6.38297,0.29145,0.278352,0.30554,,,,,not supported (significant in the opposite direction)

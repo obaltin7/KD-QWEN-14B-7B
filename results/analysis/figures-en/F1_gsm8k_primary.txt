@@ -1,0 +1,1 @@
+GSM8K test (n = 1319) 0-shot flexible accuracy. Bars: seed mean; markers: seed 42 (filled) and 1234 (open), error bars 95% Wilson confidence intervals. Dashed line: S0 (untrained student); dash-dotted line: T (teacher).

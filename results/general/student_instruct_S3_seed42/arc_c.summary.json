@@ -1,0 +1,260 @@
+{
+  "task": "arc_c",
+  "model_key": "student_instruct",
+  "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+  "adapter": "$WORKSPACE/runs/S3_seed42/adapter",
+  "limit": null,
+  "chat_template": false,
+  "dtype": "bfloat16",
+  "load_s": 50.3,
+  "n": 1172,
+  "n_errors": 0,
+  "acc": 0.5264505119453925,
+  "acc_ci95": [
+    0.49782520286152376,
+    0.5549029940664765
+  ],
+  "acc_norm": 0.5563139931740614,
+  "acc_norm_ci95": [
+    0.5277324785372987,
+    0.5845275536319919
+  ],
+  "primary_metric": "acc_norm",
+  "note": "failed examples count as incorrect (included in n)",
+  "time_s": 27.4,
+  "final_batch_size": 16,
+  "meta": {
+    "timestamp_utc": "2026-10-12T22:54:43+00:00",
+    "git": {
+      "branch": "main",
+      "dirty": true
+    },
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-100-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.8.0+cu128",
+      "transformers": "4.56.2",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "datasets": "4.1.1",
+      "vllm": "0.10.2",
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.2.6",
+      "pandas": "2.3.2",
+      "scipy": "1.16.2",
+      "pyyaml": "6.0.2"
+    },
+    "gpu": {
+      "cuda_available": true,
+      "cuda_version": "12.8",
+      "device_count": 1,
+      "names": [
+        "NVIDIA A100-SXM4-80GB"
+      ]
+    },
+    "config": {
+      "sha256": "79d18ce991ccfe25962b457de68d3f7ad5db6db0ae30166308a717577ccfd21c",
+      "config": {
+        "paths": {
+          "workspace": "$WORKSPACE",
+          "repo": "$WORKSPACE/KD-QWEN-14B-7B",
+          "hf_home": "$WORKSPACE/hf_cache",
+          "venv": "$WORKSPACE/venv",
+          "splits_dir": "data/splits",
+          "results_dir": "results",
+          "checkpoints_dir": "$WORKSPACE/checkpoints"
+        },
+        "models": {
+          "teacher": "Qwen/Qwen2.5-14B-Instruct",
+          "student_base": "Qwen/Qwen2.5-7B",
+          "student_instruct": "Qwen/Qwen2.5-7B-Instruct",
+          "dtype": "bfloat16"
+        },
+        "student": "student_instruct",
+        "primary_metric": {
+          "task": "gsm8k",
+          "shots": 0,
+          "scoring": "flexible"
+        },
+        "data": {
+          "dataset": "openai/gsm8k",
+          "config": "main",
+          "train_size": 7473,
+          "test_size": 1319
+        },
+        "split": {
+          "val_size": 300,
+          "seed": 42,
+          "fewshot_k": 4,
+          "fewshot_seed": 42
+        },
+        "eval": {
+          "decoding": "greedy",
+          "max_new_tokens": 512,
+          "shots": [
+            0,
+            4
+          ],
+          "split": "test",
+          "seed": 42,
+          "stop_sequences": [
+            "\n\nQuestion:",
+            "\nQuestion:"
+          ],
+          "stop_tokens": [
+            "<|endoftext|>",
+            "<|im_end|>"
+          ],
+          "vllm": {
+            "gpu_memory_utilization": 0.85,
+            "max_model_len": 4096,
+            "enable_prefix_caching": true
+          },
+          "hf": {
+            "batch_size": 16
+          },
+          "out_dir": "results/day1/eval"
+        },
+        "decision": {
+          "min_gap_points": 5,
+          "comfortable_gap_points": 8,
+          "preference": [
+            "student_base",
+            "student_instruct"
+          ]
+        },
+        "train": {
+          "seeds": [
+            42,
+            1234
+          ],
+          "runs_dir": "$WORKSPACE/runs",
+          "results_dir": "results/train",
+          "lr": 0.0001,
+          "epochs": 2,
+          "effective_batch": 16,
+          "micro_batch": 4,
+          "max_seq_len": 512,
+          "eos_token": "<|endoftext|>",
+          "warmup_ratio": 0.03,
+          "weight_decay": 0.0,
+          "max_grad_norm": 1.0,
+          "gradient_checkpointing": true,
+          "attn_implementation": "sdpa",
+          "ckpt_every_steps": null,
+          "lora": {
+            "r": 16,
+            "alpha": 32,
+            "dropout": 0.05,
+            "target_modules": [
+              "q_proj",
+              "k_proj",
+              "v_proj",
+              "o_proj",
+              "gate_proj",
+              "up_proj",
+              "down_proj"
+            ]
+          },
+          "configs": {
+            "S1": {
+              "ce": true,
+              "kd": false,
+              "hidden": false
+            },
+            "S2": {
+              "ce": true,
+              "kd": true,
+              "hidden": false
+            },
+            "S3": {
+              "ce": true,
+              "kd": true,
+              "hidden": true
+            }
+          },
+          "kd": {
+            "tau": 2.0,
+            "alpha": 0.5,
+            "kl_direction": "forward",
+            "vocab_cut": 151665
+          },
+          "hidden": {
+            "beta": 1.0,
+            "pairs": [
+              [
+                7,
+                12
+              ],
+              [
+                14,
+                24
+              ],
+              [
+                21,
+                36
+              ],
+              [
+                28,
+                48
+              ]
+            ],
+            "student_dim": 3584,
+            "teacher_dim": 5120,
+            "projection": "shared",
+            "norm": "layer_norm_no_affine"
+          }
+        },
+        "general": {
+          "out_dir": "results/general",
+          "seed": 42,
+          "batch_size": 16,
+          "max_length": 4096,
+          "datasets": {
+            "mmlu": {
+              "path": "cais/mmlu",
+              "name": "all",
+              "split": "test",
+              "n": 1000
+            },
+            "hellaswag": {
+              "path": "Rowan/hellaswag",
+              "name": null,
+              "split": "validation",
+              "n": 1000,
+              "fallback_revision": "refs/convert/parquet"
+            },
+            "arc_c": {
+              "path": "allenai/ai2_arc",
+              "name": "ARC-Challenge",
+              "split": "test",
+              "n": "all"
+            },
+            "wikitext2": {
+              "path": "Salesforce/wikitext",
+              "name": "wikitext-2-raw-v1",
+              "split": "test",
+              "n": "all"
+            }
+          },
+          "wikitext": {
+            "window": 2048,
+            "stride": 512,
+            "batch_size": 4
+          }
+        },
+        "_config_path": "$WORKSPACE/KD-QWEN-14B-7B/configs/base.yaml"
+      }
+    },
+    "script": "eval_general.py",
+    "argv": [
+      "--model",
+      "student_instruct",
+      "--tasks",
+      "all",
+      "--adapter",
+      "$WORKSPACE/runs/S3_seed42/adapter"
+    ]
+  }
+}

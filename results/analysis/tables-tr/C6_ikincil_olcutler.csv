@@ -1,0 +1,13 @@
+Ölçüt,Hipotez,Karşılaştırma,Tohum,Doğr. A %,Doğr. B %,Fark (puan),Bootstrap %95 GA,b (yalnız A),c (yalnız B),p (ham),p (Holm),"Anlamlı (α = 0,05)",Yön,Karar
+0-shot strict,H1,S2−S1,42,34.3442,76.8764,-42.5322,-45.7923,-39.2722,74,635,4.34335e-112,1.73734e-111,aleyhte,desteklenmedi (ters yönde anlamlı)
+0-shot strict,H2,S3−S2,42,33.6619,34.3442,-0.682335,-3.18423,1.89538,140,149,0.638011,0.638011,aleyhte,desteklenmedi
+0-shot strict,H1,S2−S1,1234,35.4814,75.815,-40.3336,-43.5936,-37.1494,83,615,3.03829e-101,9.11486e-101,aleyhte,desteklenmedi (ters yönde anlamlı)
+0-shot strict,H2,S3−S2,1234,32.8279,35.4814,-2.65353,-5.07961,-0.075815,127,162,0.045313,0.0906261,aleyhte,desteklenmedi
+4-shot flexible,H1,S2−S1,42,80.8188,76.4973,4.32146,2.04701,6.59591,149,92,0.000291702,0.000875106,lehte,desteklendi
+4-shot flexible,H2,S3−S2,42,78.4685,80.8188,-2.35027,-4.16983,-0.530705,60,91,0.0143596,0.0143596,aleyhte,desteklenmedi (ters yönde anlamlı)
+4-shot flexible,H1,S2−S1,1234,82.5625,76.649,5.91357,3.63912,8.18802,162,84,7.45222e-07,2.98089e-06,lehte,desteklendi
+4-shot flexible,H2,S3−S2,1234,79.7574,82.5625,-2.80516,-4.70053,-0.90978,67,104,0.00574565,0.0114913,aleyhte,desteklenmedi (ters yönde anlamlı)
+4-shot strict,H1,S2−S1,42,80.4397,76.4973,3.94238,1.66793,6.21683,146,94,0.000954974,0.00286492,lehte,desteklendi
+4-shot strict,H2,S3−S2,42,78.0895,80.4397,-2.35027,-4.16983,-0.530705,62,93,0.0156936,0.0295154,aleyhte,desteklenmedi (ters yönde anlamlı)
+4-shot strict,H1,S2−S1,1234,81.577,75.7392,5.83776,3.41168,8.18802,171,94,2.60007e-06,1.04003e-05,lehte,desteklendi
+4-shot strict,H2,S3−S2,1234,78.9992,81.577,-2.57771,-4.5489,-0.530705,75,109,0.0147577,0.0295154,aleyhte,desteklenmedi (ters yönde anlamlı)

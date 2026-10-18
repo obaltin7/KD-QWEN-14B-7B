@@ -1,0 +1,1 @@
+Learning–forgetting plane. x: mean drop relative to S0 in MMLU (acc), HellaSwag (acc_norm) and ARC-C (acc_norm) accuracy (points; positive = drop). y: gain relative to S0 in GSM8K test 0-shot flexible accuracy (points). Small markers: single runs (two seeds); large markers: configuration means; star: S0 (0, 0).
